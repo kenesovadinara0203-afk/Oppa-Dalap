@@ -1,0 +1,282 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oppa Dalap — Магазин косметики</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<header class="header">
+    <a href="#" class="logo">Oppa Dalap<span>♥</span></a>
+
+    <nav class="nav">
+        <a href="#" data-i18n="home">Главная</a>
+        <a href="#catalog" data-i18n="catalog">Каталог</a>
+        <a href="#about" data-i18n="about">О нас</a>
+        <a href="#cart" data-i18n="cart">Корзина</a>
+    </nav>
+
+    <div class="language-switch">
+        <button onclick="changeLanguage('ru')">RU</button>
+        <button onclick="changeLanguage('kk')">KZ</button>
+        <button onclick="changeLanguage('en')">EN</button>
+    </div>
+</header>
+
+<main class="hero">
+    <p class="subtitle">BEAUTY • CARE • LOVE</p>
+
+    <h1 class="hero-title">Oppa Dalap</h1>
+
+    <p class="description" data-i18n="slogan">
+        Твоя красота — твои правила 💗
+    </p>
+
+    <a class="shop-button" href="#catalog" data-i18n="shop">
+        Смотреть косметику
+    </a>
+</main>
+
+<section id="catalog" class="section">
+    <h2 data-i18n="catalogTitle">✨ Наш каталог косметики ✨</h2>
+    <p class="section-description" data-i18n="catalogSubtitle">
+        Выбирай свою любимую косметику 💗
+    </p>
+
+    <div class="product-grid">
+
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=500" alt="Крем">
+            <h3 data-i18n="p1">Увлажняющий крем</h3>
+            <p class="price">4 500 ₸</p>
+            <button class="product-button" onclick="addToCart('Увлажняющий крем')" data-i18n="add">В корзину</button>
+        </div>
+
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=500" alt="Сыворотка">
+            <h3 data-i18n="p2">Сыворотка для лица</h3>
+            <p class="price">5 900 ₸</p>
+            <button class="product-button" onclick="addToCart('Сыворотка для лица')" data-i18n="add">В корзину</button>
+        </div>
+
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=500" alt="Косметика">
+            <h3 data-i18n="p3">Набор косметики</h3>
+            <p class="price">8 500 ₸</p>
+            <button class="product-button" onclick="addToCart('Набор косметики')" data-i18n="add">В корзину</button>
+        </div>
+
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1556229010-6c3f2c9ca5f8?w=500" alt="Уход">
+            <h3 data-i18n="p4">Набор для ухода</h3>
+            <p class="price">6 500 ₸</p>
+            <button class="product-button" onclick="addToCart('Набор для ухода')" data-i18n="add">В корзину</button>
+        </div>
+
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1631730359585-38a4935cbec4?w=500" alt="Помада">
+            <h3 data-i18n="p5">Матовая помада</h3>
+            <p class="price">2 900 ₸</p>
+            <button class="product-button" onclick="addToCart('Матовая помада')" data-i18n="add">В корзину</button>
+        </div>
+
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1631214524020-7e18db9a8f92?w=500" alt="Тушь">
+            <h3 data-i18n="p6">Тушь для ресниц</h3>
+            <p class="price">3 200 ₸</p>
+            <button class="product-button" onclick="addToCart('Тушь для ресниц')" data-i18n="add">В корзину</button>
+        </div>
+
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?w=500" alt="Маска">
+            <h3 data-i18n="p7">Маска для лица</h3>
+            <p class="price">1 800 ₸</p>
+            <button class="product-button" onclick="addToCart('Маска для лица')" data-i18n="add">В корзину</button>
+        </div>
+
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=500" alt="Тональный крем">
+            <h3 data-i18n="p8">Тональный крем</h3>
+            <p class="price">4 200 ₸</p>
+            <button class="product-button" onclick="addToCart('Тональный крем')" data-i18n="add">В корзину</button>
+        </div>
+
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1599733589046-833c9b3b7b47?w=500" alt="Румяна">
+            <h3 data-i18n="p9">Румяна для лица</h3>
+            <p class="price">2 500 ₸</p>
+            <button class="product-button" onclick="addToCart('Румяна для лица')" data-i18n="add">В корзину</button>
+        </div>
+
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=500" alt="Очищение">
+            <h3 data-i18n="p10">Гель для умывания</h3>
+            <p class="price">3 500 ₸</p>
+            <button class="product-button" onclick="addToCart('Гель для умывания')" data-i18n="add">В корзину</button>
+        </div>
+
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1601049541289-9b1b7bbbfe19?w=500" alt="Тени">
+            <h3 data-i18n="p11">Палетка теней</h3>
+            <p class="price">4 800 ₸</p>
+            <button class="product-button" onclick="addToCart('Палетка теней')" data-i18n="add">В корзину</button>
+        </div>
+
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1590156221060-7b9f4c8e6d2b?w=500" alt="Бальзам">
+            <h3 data-i18n="p12">Бальзам для губ</h3>
+            <p class="price">1 500 ₸</p>
+            <button class="product-button" onclick="addToCart('Бальзам для губ')" data-i18n="add">В корзину</button>
+        </div>
+
+    </div>
+</section>
+
+<section id="cart" class="section cart-section">
+    <h2 data-i18n="cartTitle">🛍 Твоя корзина</h2>
+    <p id="cart-message" data-i18n="emptyCart">Пока корзина пуста</p>
+</section>
+
+<section id="about" class="section about-section">
+    <h2 data-i18n="aboutTitle">О Oppa Dalap 💗</h2>
+    <p data-i18n="aboutText">
+        Твоя красота — наша любовь. Выбирай косметику, которая вдохновляет!
+    </p>
+</section>
+
+<footer>
+    <p>© 2026 Oppa Dalap · Beauty • Care • Love</p>
+</footer>
+
+<script>
+    let cart = [];
+
+    function addToCart(productName) {
+        cart.push(productName);
+
+        const message = document.getElementById("cart-message");
+        message.textContent = cart.join(", ");
+
+        alert(productName + " добавлен(а) в корзину! 💗");
+    }
+
+    const translations = {
+        ru: {
+            home: "Главная",
+            catalog: "Каталог",
+            about: "О нас",
+            cart: "Корзина 🛍",
+            slogan: "Твоя красота — твои правила 💗",
+            shop: "Смотреть косметику",
+            catalogTitle: "✨ Наш каталог косметики ✨",
+            catalogSubtitle: "Выбирай свою любимую косметику 💗",
+            add: "В корзину",
+            cartTitle: "🛍 Твоя корзина",
+            emptyCart: "Пока корзина пуста",
+            aboutTitle: "О Oppa Dalap 💗",
+            aboutText: "Твоя красота — наша любовь. Выбирай косметику, которая вдохновляет!",
+            p1: "Увлажняющий крем",
+            p2: "Сыворотка для лица",
+            p3: "Набор косметики",
+            p4: "Набор для ухода",
+            p5: "Матовая помада",
+            p6: "Тушь для ресниц",
+            p7: "Маска для лица",
+            p8: "Тональный крем",
+            p9: "Румяна для лица",
+            p10: "Гель для умывания",
+            p11: "Палетка теней",
+            p12: "Бальзам для губ"
+        },
+        kk: {
+            home: "Басты бет",
+            catalog: "Каталог",
+            about: "Біз туралы",
+            cart: "Себет 🛍",
+            slogan: "Сенің сұлулығың — сенің ережең 💗",
+            shop: "Косметиканы көру",
+            catalogTitle: "✨ Біздің косметика каталогы ✨",
+            catalogSubtitle: "Өзіңе ұнайтын косметиканы таңда 💗",
+            add: "Себетке салу",
+            cartTitle: "🛍 Сенің себетің",
+            emptyCart: "Себет әзірге бос",
+            aboutTitle: "Oppa Dalap туралы 💗",
+            aboutText: "Сенің сұлулығың — біздің махаббатымыз. Өзіңді шабыттандыратын косметиканы таңда!",
+            p1: "Ылғалдандырғыш крем",
+            p2: "Бетке арналған сарысу",
+            p3: "Косметика жиынтығы",
+            p4: "Күтім жиынтығы",
+            p5: "Күңгірт далап",
+            p6: "Кірпікке арналған тушь",
+            p7: "Бетке арналған маска",
+            p8: "Тоналды крем",
+            p9: "Бетке арналған румяна",
+            p10: "Бет жууға арналған гель",
+            p11: "Қабақ бояулары",
+            p12: "Ерінге арналған бальзам"
+        },
+        en: {
+            home: "Home",
+            catalog: "Catalog",
+            about: "About us",
+            cart: "Cart 🛍",
+            slogan: "Your beauty, your rules 💗",
+            shop: "Shop cosmetics",
+            catalogTitle: "✨ Our beauty collection ✨",
+            catalogSubtitle: "Find your favorite beauty products 💗",
+            add: "Add to cart",
+            cartTitle: "🛍 Your cart",
+            emptyCart: "Your cart is empty",
+            aboutTitle: "About Oppa Dalap 💗",
+            aboutText: "Your beauty is our love. Find cosmetics that inspire you!",
+            p1: "Moisturizing Cream",
+            p2: "Face Serum",
+            p3: "Makeup Set",
+            p4: "Skincare Set",
+            p5: "Matte Lipstick",
+            p6: "Mascara",
+            p7: "Face Mask",
+            p8: "Foundation",
+            p9: "Blush",
+            p10: "Facial Cleanser",
+            p11: "Eyeshadow Palette",
+            p12: "Lip Balm"
+        }
+    };
+
+    let currentLanguage = "ru";
+
+    function changeLanguage(language) {
+        currentLanguage = language;
+
+        document.documentElement.lang =
+            language === "kk" ? "kk" : language;
+
+        document.querySelectorAll("[data-i18n]").forEach(element => {
+            const key = element.dataset.i18n;
+            const translatedText = translations[language][key];
+
+            if (translatedText) {
+                element.textContent = translatedText;
+            }
+        });
+
+        if (cart.length === 0) {
+            document.getElementById("cart-message").textContent =
+                translations[language].emptyCart;
+        } else {
+            document.getElementById("cart-message").textContent =
+                cart.join(", ");
+        }
+    }
+</script>
+
+</body>
+</html>
